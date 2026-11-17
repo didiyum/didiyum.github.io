@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ce gătim azi, by Didi</title>
+<meta name="description" content="Rețete de casă, simple și gustoase, cu ingrediente clare și pași scurți. Ce gătim azi, by Didi.">
+<!-- Google Analytics (GA4): la publicarea pe GitHub înlocuiește G-XXXXXXXXXX cu ID-ul tău și scoate comentariul.
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lora:wght@500;600&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="#acasa" aria-label="Ce gătim azi, by Didi – acasă">
+      <svg class="pot" viewBox="0 0 64 56" aria-hidden="true"><path d="M26 15c-4-3 4-5 0-9M38 15c-4-3 4-5 0-9" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round"/><rect x="29" y="16" width="6" height="4" rx="2" fill="var(--ink)"/><ellipse cx="32" cy="23" rx="22" ry="4" fill="var(--ink)"/><path d="M10 27h44v11a14 14 0 0 1-14 14H24A14 14 0 0 1 10 38z" fill="var(--pot)"/><path d="M10 31H4M54 31h6" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/></svg>
+      <span class="brand-text"><span class="brand-title">Ce gătim azi</span><span class="brand-by">by Didi</span></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav" aria-label="Deschide meniul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <nav class="nav" id="nav" aria-label="Meniu principal">
+      <ul>
+        <li><a href="#retete">Rețete (A-Z)</a></li>
+        <li><a href="#index">Index categorii</a></li>
+        <li class="has-sub">
+          <button class="link" id="catBtn" aria-expanded="false" aria-controls="catSub">Categorii rețete <svg class="chev" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3l4 4 4-4"/></svg></button>
+          <div class="sub" id="catSub"><a href="#supe">Supe și ciorbe</a><a href="#fel-principal">Fel principal</a><a href="#garnituri">Garnituri</a><a href="#salate">Salate</a><a href="#deserturi">Deserturi</a><a href="#aluaturi">Aluaturi</a></div>
+        </li>
+        <li><button class="link search-btn" id="searchBtn" aria-expanded="false" aria-controls="searchRow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>Caută</button></li>
+        <li><button class="theme-btn" id="themeBtn" type="button" role="switch" aria-checked="false" aria-label="Mod întunecat"><span class="knob">☀</span></button></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="search-row" id="searchRow"><form role="search" onsubmit="return false"><input type="search" id="q" placeholder="Caută o rețetă, de exemplu sarmale" aria-label="Caută o rețetă"><button type="submit">Caută</button></form></div>
+</header>
+
+<div class="wrap" id="wrap">
+  <!-- INTRO -->
+  <main class="view on" id="v-intro"><div>
+    <section class='hero'>
+      <div>
+        <h2>Ce gătim azi? Idei de rețete: ce să mai faci de mâncare</h2>
+        <p>Când gătitul cade în sarcina ta, știi cât de greu e să vii mereu cu ceva diferit și să ai un răspuns pregătit pentru întrebarea „Ce mâncăm azi?”. Ca să nu mai fii pus în dificultate, am adunat aici idei de mâncare pentru fiecare zi a săptămânii, astfel încât decizia să fie mult mai ușoară.</p>
+        <p>Găsești la noi rețete de casă, alături de preparate noi și simple, făcute cu ingrediente pe care le ai de obicei în cămară sau le iei repede din piață. Fiecare rețetă are ingredientele enumerate clar, pași scurți și timpi realiști, ca seara să nu te ia pe nepregătite.</p>
+        <p>Dacă vreodată rămâi fără inspirație, sper să te gândești la noi ca la sursa ta de rețete: ceva rapid pentru o zi încărcată, ceva cunoscut pentru masa în familie sau ceva nou pentru weekend. Răsfoiește, alege ce te inspiră și pune-te pe gătit. Poftă bună!</p>
+      </div>
+      <svg viewBox='0 0 600 480' role='img' aria-label='Ilustrație cu mâncare văzută de sus: ciorbă, sarmale, papanași, roșii și un șervet'>
+        <rect width='600' height='480' rx='18' fill='#efe4d0'/>
+        <path d='M0 160H600M0 320H600' stroke='#e2d4ba' stroke-width='2'/>
+        <g transform='rotate(-8 95 395)'><rect x='20' y='350' width='150' height='90' rx='6' fill='#fff'/><rect x='20' y='350' width='150' height='16' fill='#009246'/><rect x='20' y='424' width='150' height='16' fill='#ce2b37'/></g>
+        <circle cx='178' cy='170' r='104' fill='#0000001a'/><circle cx='170' cy='160' r='100' fill='#fff'/><circle cx='170' cy='160' r='84' fill='#f1ece3'/><circle cx='170' cy='160' r='72' fill='#e58a3c'/><circle cx='170' cy='160' r='58' fill='#ec9a4f'/>
+        <g fill='#9a5b32'><circle cx='148' cy='146' r='14'/><circle cx='192' cy='138' r='14'/><circle cx='176' cy='186' r='14'/><circle cx='138' cy='182' r='12'/></g>
+        <g fill='#f6c453'><circle cx='165' cy='166' r='5'/><circle cx='204' cy='168' r='5'/><circle cx='122' cy='160' r='5'/><circle cx='160' cy='198' r='5'/></g>
+        <g fill='#4f9d4a'><ellipse cx='156' cy='124' rx='8' ry='3' transform='rotate(30 156 124)'/><ellipse cx='198' cy='190' rx='8' ry='3'/><ellipse cx='126' cy='140' rx='8' ry='3' transform='rotate(-30 126 140)'/></g>
+        <circle cx='438' cy='338' r='122' fill='#0000001a'/><circle cx='430' cy='330' r='118' fill='#fff'/><circle cx='430' cy='330' r='98' fill='#f6f2ea'/>
+        <g stroke='#6c9a54' stroke-width='3' fill='#8dbb70'><ellipse cx='405' cy='305' rx='48' ry='20' transform='rotate(-22 405 305)'/><ellipse cx='448' cy='345' rx='48' ry='20' transform='rotate(18 448 345)'/><ellipse cx='398' cy='360' rx='46' ry='19' transform='rotate(-6 398 360)'/></g>
+        <circle cx='462' cy='300' r='20' fill='#fffdf7' stroke='#ece6da' stroke-width='3'/><path d='M456 296l4-8M462 298l8-6M466 304l8-2' stroke='#3d8b4a' stroke-width='3' stroke-linecap='round'/>
+        <circle cx='486' cy='101' r='74' fill='#0000001a'/><circle cx='480' cy='95' r='70' fill='#fff'/><circle cx='480' cy='95' r='56' fill='#f6f2ea'/>
+        <circle cx='462' cy='100' r='24' fill='#d9953f'/><circle cx='462' cy='100' r='8' fill='#f6f2ea'/><circle cx='498' cy='108' r='24' fill='#cf8a35'/><circle cx='498' cy='108' r='8' fill='#f6f2ea'/><circle cx='480' cy='80' r='13' fill='#8c1f3a'/><circle cx='480' cy='80' r='5' fill='#b0334f'/>
+        <circle cx='325' cy='66' r='26' fill='#f4d03f'/><circle cx='325' cy='66' r='21' fill='#fbe98a'/><path d='M325 45v42M304 66h42M310 51l30 30M340 51l-30 30' stroke='#f4d03f' stroke-width='2'/>
+        <circle cx='262' cy='372' r='28' fill='#d8352f'/><path d='M262 346l-8 10 8-2 8 2z' fill='#3d8b4a'/><circle cx='308' cy='412' r='21' fill='#e0463a'/><path d='M308 391l-6 8 6-2 6 2z' fill='#3d8b4a'/>
+        <g fill='#2e8b57'><ellipse cx='232' cy='402' rx='16' ry='8' transform='rotate(-35 232 402)'/><ellipse cx='296' cy='364' rx='16' ry='8' transform='rotate(25 296 364)'/></g>
+      </svg>
+    </section>
+    </div></main>
+
+  <!-- LISTA REȚETE -->
+  <main class="view" id="v-home"><div>
+    <div class="cards" id="p1">
+      <a class="card" href="#reteta"><div class="ph photo"><img src="img/salata-de-conopida-cu-maioneza.jpg" loading="lazy" alt="Salată de conopidă cu maioneză într-un bol ceramic, cu pătrunjel deasupra" width="1200" height="655"></div><div class="card-body"><p class="cat">Salate</p><h2>Salată de conopidă cu maioneză și usturoi sau ceapă</h2><p class="ex">O salată cremoasă și rapidă, cu conopidă fiartă doar cât să rămână crocantă, maioneză și ceapă sau usturoi.</p></div></a>
+      <a class="card" href="#reteta"><div class="ph"><div>🥣<small>Aici vine poza</small></div></div><div class="card-body"><p class="cat">Supe și ciorbe</p><h2>Ciorbă de perișoare cu tarhon</h2><p class="ex">O ciorbă acrișoară, cu perișoare moi și legume din belșug, ca la bunica acasă.</p></div></a>
+      <a class="card" href="#reteta"><div class="ph"><div>🥬<small>Aici vine poza</small></div></div><div class="card-body"><p class="cat">Fel principal</p><h2>Sarmale în foi de varză</h2><p class="ex">Rețeta clasică, gătită încet, cu carne tocată, orez și puțin cimbru.</p></div></a>
+      <a class="card" href="#reteta"><div class="ph"><div>🍆<small>Aici vine poza</small></div></div><div class="card-body"><p class="cat">Salate</p><h2>Salată de vinete cu ceapă roșie</h2><p class="ex">Vinete coapte pe flacără, făcute cremă, cu ulei și ceapă. Simplă și gustoasă.</p></div></a>
+    </div>
+    <div class="cards" id="p2" hidden>
+      <a class="card" href="#reteta"><div class="ph"><div>🍗<small>Aici vine poza</small></div></div><div class="card-body"><p class="cat">Fel principal</p><h2>Tocăniță de pui cu mămăliguță</h2><p class="ex">Pui fraged într-un sos gros cu ceapă și boia, servit cu mămăligă fierbinte.</p></div></a>
+      <a class="card" href="#reteta"><div class="ph"><div>🎃<small>Aici vine poza</small></div></div><div class="card-body"><p class="cat">Supe și ciorbe</p><h2>Supă cremă de dovleac</h2><p class="ex">O supă fină, aurie, gata în 30 de minute, perfectă pentru zilele reci.</p></div></a>
+      <a class="card" href="#reteta"><div class="ph"><div>🥔<small>Aici vine poza</small></div></div><div class="card-body"><p class="cat">Garnituri</p><h2>Cartofi la cuptor cu rozmarin</h2><p class="ex">Crocanți pe margini, moi în mijloc, cu usturoi și rozmarin proaspăt.</p></div></a>
+      <a class="card" href="#reteta"><div class="ph"><div>🥧<small>Aici vine poza</small></div></div><div class="card-body"><p class="cat">Aluaturi</p><h2>Plăcintă cu mere și scorțișoară</h2><p class="ex">Aluat fraged și umplutură de mere parfumată, bună și caldă, și rece.</p></div></a>
+    </div>
+    <nav class="pager" id="pager" aria-label="Pagini"><button type="button" data-p="prev">Înapoi</button><button type="button" data-p="1" aria-current="page">1</button><button type="button" data-p="2">2</button><button type="button" data-p="next">Înainte</button></nav>
+    </div>
+  </main>
+
+  <!-- RETETA -->
+  <article class="view post" id="v-post">
+    <div>
+      <div class="crumbs"><a href="#acasa">Acasă</a> &rsaquo; <a href="#salate">Salate</a> &rsaquo; Salată de conopidă</div>
+      <h1>Salată de conopidă cu maioneză și usturoi sau ceapă</h1>
+      <figure><img src="img/salata-de-conopida-cu-maioneza.jpg" loading="lazy" alt="Salată de conopidă cu maioneză într-un bol ceramic, cu pătrunjel deasupra" width="1200" height="655"></figure>
+      <p>Salata de conopidă cu maioneză e o gustare rece simplă, care se face repede din puține ingrediente și merge de la masa de zi cu zi până la cea de sărbătoare. Secretul stă într-un singur lucru: conopida se fierbe foarte puțin, ca să rămână ușor crocantă, nu moale și apoasă.</p>
+      <dl class="facts">
+        <div><dt>Preparare</dt><dd>15 minute</dd></div><div><dt>Gătire</dt><dd>4 minute</dd></div><div><dt>Timp total</dt><dd>20 minute</dd></div>
+        <div><dt>Categorie</dt><dd>Salate</dd></div><div><dt>Bucătărie</dt><dd>Românească</dd></div><div><dt>Servire</dt><dd>6 porții</dd></div>
+      </dl>
+      <h2>Ingrediente pentru salata de conopidă</h2>
+      <ul class="ing">
+        <li><label><input type="checkbox"><span>1 conopidă medie (aproximativ 700 g)</span></label></li>
+        <li><label><input type="checkbox"><span>1 ceapă roșie, sau 2-3 fire de ceapă verde, sau 2-3 căței de usturoi</span></label></li>
+        <li><label><input type="checkbox"><span>2 linguri de smântână sau iaurt grecesc (opțional)</span></label></li>
+        <li><label><input type="checkbox"><span>verdeață proaspătă pentru decor (pătrunjel, mărar sau arpagic)</span></label></li>
+        <li><label><input type="checkbox"><span>2 lingurițe de sare pentru apa de fiert</span></label></li>
+      </ul>
+      <h3>Pentru maioneza de casă (aproximativ 3 linguri bune)</h3>
+      <ul class="ing">
+        <li><label><input type="checkbox"><span>2 gălbenușuri la temperatura camerei</span></label></li>
+        <li><label><input type="checkbox"><span>2 lingurițe de muștar</span></label></li>
+        <li><label><input type="checkbox"><span>150 ml de ulei</span></label></li>
+        <li><label><input type="checkbox"><span>sare și piper, după gust</span></label></li>
+      </ul>
+      <h2>Mod de preparare</h2>
+      <h3>Pregătirea conopidei</h3>
+      <ol class="steps">
+        <li>Împarte conopida în buchețele mici. Taie frunzele și partea lemnoasă a cotorului, apoi spală bine buchețelele sub jet de apă rece și scurge-le. Verifică printre ele, pentru că uneori se ascund insecte mici.</li>
+        <li>Pune la fiert 2 litri de apă cu sarea într-o oală de aproximativ 3 litri. Când apa clocotește, adaugă conopida și fierbe-o exact 4 minute, nu mai mult.</li>
+        <li>Mută imediat buchețelele într-un vas cu apă rece și câteva cuburi de gheață, ca să se oprească gătirea. După aproximativ 5 minute, scurge-le bine într-o strecurătoare. Înainte de a face salata, conopida trebuie să fie rece și bine scursă.</li>
+      </ol>
+      <figure><img src="img/conopida-curatata-in-bol.jpg" loading="lazy" alt="Buchețele de conopidă curățate, într-un bol ceramic" width="1200" height="805"></figure>
+      <h3>Sosul și asamblarea</h3>
+      <ol class="steps" start="4">
+        <li>Dacă faci maioneza acasă, bate gălbenușurile cu muștarul, sare și piper. Adaugă uleiul într-un fir foarte subțire, amestecând continuu, până când sosul se leagă și devine cremos.</li>
+        <li>Toacă mărunt ceapa sau usturoiul și verdeața. Amestecă maioneza cu smântâna sau iaurtul și cu ceapa ori usturoiul.</li>
+        <li>Pune conopida într-un bol, adaugă sosul și amestecă ușor. Gustă și potrivește de sare și piper. Dacă preferi o textură mai fină, strivește câteva buchețele cu furculița.</li>
+        <li>Presară verdeață deasupra și lasă salata la rece cel puțin 30 de minute înainte de servire.</li>
+      </ol>
+      <figure><img src="img/salata-de-conopida-pe-paine-neagra.jpg" loading="lazy" alt="Felii de pâine neagră cu salată de conopidă cu maioneză și pătrunjel, lângă bolul cu conopidă" width="1200" height="805"></figure>
+      <h2>Sfaturi</h2>
+      <ul class="tips">
+        <li>Conopida are un gust pronunțat. Dacă vrei o salată mai blândă, adaugă câțiva cartofi fierți și mărunțiți.</li>
+        <li>Ceapa roșie merge bine iarna, ceapa verde primăvara, iar usturoiul dă un gust mai intens.</li>
+        <li>Smântâna sau iaurtul grecesc fac sosul mai ușor și mai proaspăt.</li>
+        <li>Poți găti conopida și la aburi, aproximativ 7 minute, apoi o răcești la fel.</li>
+        <li>Păstreaz-o la frigider, într-un vas acoperit, cel mult 2 zile.</li>
+      </ul>
+      <div class="share share-end"><span>Distribuie rețeta</span><a class="btn" href="#reteta" data-s="fb" target="_blank" rel="noopener">Facebook</a><a class="btn" href="#reteta" data-s="x" target="_blank" rel="noopener">X</a><a class="btn" href="#reteta" data-s="pin" target="_blank" rel="noopener">Pinterest</a><a class="btn" href="#reteta" data-s="wa" target="_blank" rel="noopener">WhatsApp</a><button class="btn" type="button" id="copyBtn">Copiază linkul</button><button class="btn" type="button" onclick="window.print()">Printează</button></div>
+      <nav class="pn" aria-label="Rețete vecine"><a href="#reteta"><span class="t">🥣</span><span><small>Anterioară</small><b>Ciorbă de perișoare cu tarhon</b></span></a><a class="nx" href="#reteta"><span><small>Următoarea</small><b>Sarmale în foi de varăz</b></span><span class="t">🥬</span></a></nav>
+    </div>
+  </article>
+
+  <aside aria-label="Rețete recente">
+    <h3>Rețete recente</h3>
+    <a class="recent" href="#reteta"><span class="t"><img src="img/salata-de-conopida-cu-maioneza.jpg" loading="lazy" alt="Salată de conopidă cu maioneză într-un bol ceramic, cu pătrunjel deasupra" width="1200" height="655"></span><b>Salată de conopidă cu maioneză și usturoi sau ceapă</b></a>
+    <a class="recent" href="#reteta"><span class="t">🥣</span><b>Ciorbă de perișoare cu tarhon</b></a>
+    <a class="recent" href="#reteta"><span class="t">🥬</span><b>Sarmale în foi de varză</b></a>
+    <a class="recent" href="#reteta"><span class="t">🍆</span><b>Salată de vinete cu ceapă roșie</b></a>
+  </aside>
+</div>
+
+<footer class="foot">
+  <p>© Ce gătim azi, by Didi. Toate drepturile rezervate.</p>
+  <nav aria-label="Linkuri footer"><a href="#acasa">Acasă</a><a href="#despre">Despre</a><a href="#contact">Contact</a><a href="#confidentialitate">Politica de confidențialitate</a></nav>
+  <nav class="social" aria-label="Rețele sociale"><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a><a href="https://www.pinterest.com/" target="_blank" rel="noopener">Pinterest</a><a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a></nav>
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>
