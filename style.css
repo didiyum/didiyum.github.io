@@ -127,3 +127,4 @@ a.btn{text-decoration:none;display:inline-block}
 .pn[hidden],.pager[hidden]{display:none}
 .pn .t,.recent .t{overflow:hidden}
 .pn .t img{width:100%;height:100%;object-fit:cover;display:block}
+[hidden]{display:none!important}

@@ -44,7 +44,7 @@
     return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; });
   }
   function norm(t) { return String(t).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
-  function thumb(r) { return '<span class="t"><img src="' + r.image + '" alt="" loading="lazy"></span>'; }
+  function thumb(r) { return '<span class="t"><img src="' + r.image + '" alt="" loading="lazy" onerror="this.hidden=true"></span>'; }
 
   /* ---------- bara laterală: rețete recente ---------- */
   var rc = $('recent');
@@ -69,7 +69,7 @@
       $('q').value = q;
     }
     var card = function (r) {
-      return '<a class="card" href="/' + r.slug + '"><div class="ph photo"><img src="' + r.image + '" alt="' + esc(r.alt) + '" loading="lazy"></div>' +
+      return '<a class="card" href="/' + r.slug + '"><div class="ph photo"><img src="' + r.image + '" alt="' + esc(r.alt) + '" loading="lazy" onerror="this.parentNode.hidden=true"></div>' +
         '<div class="card-body"><p class="cat">' + esc(r.category) + '</p><h2>' + esc(r.title) + '</h2><p class="ex">' + esc(r.excerpt) + '</p></div></a>';
     };
     var render = function () {
