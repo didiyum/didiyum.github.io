@@ -1,6 +1,14 @@
 // Lista rețetelor, cea mai nouă prima. Fiecare rețetă nouă = o pagină .html + o intrare aici.
 window.RECIPES = [
   {
+    "slug": "paine-turceasca-la-tigaie",
+    "title": "Pâine turcească la tigaie, moale și rumenă",
+    "category": "Aluaturi",
+    "excerpt": "Lipii moi și rumene, coapte la tigaie, din aluat cu drojdie și chefir. Fără cuptor, bune calde cu brânză proaspătă și roșii.",
+    "image": "/img/paine-turceasca-la-tigaie.jpg",
+    "alt": "Grămadă de pâini turcești rumene, coapte la tigaie, pe o farfurie"
+  },
+  {
     "slug": "supa-crema-de-dovleac",
     "title": "Supă cremă de dovleac copt la cuptor",
     "category": "Supe și ciorbe",
