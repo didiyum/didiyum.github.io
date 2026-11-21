@@ -1,6 +1,14 @@
 // Lista rețetelor, cea mai nouă prima. Fiecare rețetă nouă = o pagină .html + o intrare aici.
 window.RECIPES = [
   {
+    "slug": "prajitura-cu-prune",
+    "title": "Prăjitură pufoasă cu prune, fără praf de copt",
+    "category": "Deserturi",
+    "excerpt": "Blat aerat din ouă bătute, fără praf de copt, și un strat generos de prune care rămân la suprafață. Fragedă, suculentă și gata în 40 de minute.",
+    "image": "/img/prajitura-cu-prune/prajitura-cu-prune.webp",
+    "alt": "Prăjitură pufoasă cu prune, cu sferturi de prune lucioase la suprafață, pe un grătar, pe o masă de lemn"
+  },
+  {
     "slug": "paine-turceasca-la-tigaie",
     "title": "Pâine turcească la tigaie, moale și rumenă",
     "category": "Aluaturi",
