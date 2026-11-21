@@ -2,6 +2,23 @@
   var $ = function (i) { return document.getElementById(i); };
   var R = window.RECIPES || [];
 
+  /* ---------- limba: RO / EN (traducere automata Google) ---------- */
+  var host = location.hostname, onTr = /\.translate\.goog$/.test(host);
+  var TR = '_x_tr_sl=ro&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=wapp';
+  function withTr(u) { return onTr ? u + (u.indexOf('?') > -1 ? '&' : '?') + TR : u; }
+  (function () {
+    var ro = document.getElementById('langRo'), en = document.getElementById('langEn');
+    if (!ro || !en) return;
+    var origHost = onTr ? host.replace(/\.translate\.goog$/, '').replace(/--/g, '\u0000').replace(/-/g, '.').replace(/\u0000/g, '-') : host;
+    var qs = new URLSearchParams(location.search);
+    ['_x_tr_sl', '_x_tr_tl', '_x_tr_hl', '_x_tr_pto'].forEach(function (k) { qs.delete(k); });
+    var rest = qs.toString();
+    ro.href = 'https://' + origHost + location.pathname + (rest ? '?' + rest : '');
+    en.href = 'https://' + origHost.replace(/-/g, '--').replace(/\./g, '-') + '.translate.goog' + location.pathname + '?' + (rest ? rest + '&' : '') + TR;
+    ro.classList.toggle('on', !onTr); en.classList.toggle('on', onTr);
+    if (onTr) { ro.removeAttribute('aria-current'); en.setAttribute('aria-current', 'true'); }
+  })();
+
   /* ---------- header: meniu, categorii, căutare ---------- */
   var menuBtn = $('menuBtn'), nav = $('nav'), catBtn = $('catBtn'), catSub = $('catSub');
   var searchBtn = $('searchBtn'), searchRow = $('searchRow');
@@ -20,7 +37,7 @@
   $('searchForm').addEventListener('submit', function (e) {
     e.preventDefault();
     var v = $('q').value.trim();
-    if (v) location.href = '/?q=' + encodeURIComponent(v);
+    if (v) location.href = withTr('/?q=' + encodeURIComponent(v));
   });
 
   /* ---------- temă alb / negru ---------- */
@@ -50,7 +67,7 @@
   var rc = $('recent');
   if (rc) {
     rc.innerHTML = R.slice(0, 5).map(function (r) {
-      return '<a class="recent" href="/' + r.slug + '">' + thumb(r) + '<b>' + esc(r.title) + '</b></a>';
+      return '<a class="recent" href="' + withTr('/' + r.slug) + '">' + thumb(r) + '<b>' + esc(r.title) + '</b></a>';
     }).join('');
   }
 
@@ -69,7 +86,7 @@
       $('q').value = q;
     }
     var card = function (r) {
-      return '<a class="card" href="/' + r.slug + '"><div class="ph photo"><img src="' + r.image + '" alt="' + esc(r.alt) + '" loading="lazy" onerror="this.parentNode.hidden=true"></div>' +
+      return '<a class="card" href="' + withTr('/' + r.slug) + '"><div class="ph photo"><img src="' + r.image + '" alt="' + esc(r.alt) + '" loading="lazy" onerror="this.parentNode.hidden=true"></div>' +
         '<div class="card-body"><p class="cat">' + esc(r.category) + '</p><h2>' + esc(r.title) + '</h2><p class="ex">' + esc(r.excerpt) + '</p></div></a>';
     };
     var render = function () {
@@ -98,8 +115,8 @@
   if (pn) {
     var cur = R.findIndex(function (r) { return r.slug === document.body.dataset.slug; });
     var older = R[cur + 1], newer = cur > 0 ? R[cur - 1] : null, h = '';
-    if (older) h += '<a href="/' + older.slug + '">' + thumb(older) + '<span><small>Anterioară</small><b>' + esc(older.title) + '</b></span></a>';
-    if (newer) h += '<a class="nx" href="/' + newer.slug + '"><span><small>Următoarea</small><b>' + esc(newer.title) + '</b></span>' + thumb(newer) + '</a>';
+    if (older) h += '<a href="' + withTr('/' + older.slug) + '">' + thumb(older) + '<span><small>Anterioară</small><b>' + esc(older.title) + '</b></span></a>';
+    if (newer) h += '<a class="nx" href="' + withTr('/' + newer.slug) + '"><span><small>Următoarea</small><b>' + esc(newer.title) + '</b></span>' + thumb(newer) + '</a>';
     if (h) { pn.innerHTML = h; pn.hidden = false; }
 
     var su = encodeURIComponent(location.href), st = encodeURIComponent(document.title);
