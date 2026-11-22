@@ -5,8 +5,8 @@ window.RECIPES = [
     "title": "Prăjitură pufoasă cu prune, fără praf de copt",
     "category": "Deserturi",
     "excerpt": "Blat aerat din ouă bătute, fără praf de copt, și un strat generos de prune care rămân la suprafață. Fragedă, suculentă și gata în 40 de minute.",
-    "image": "/img/prajitura-cu-prune/prajitura-cu-prune.webp",
-    "alt": "Prăjitură pufoasă cu prune, cu sferturi de prune lucioase la suprafață, pe un grătar, pe o masă de lemn"
+    "image": "/img/prajitura-cu-prune/tarta-cu-prune.webp",
+    "alt": "Prăjitură cu prune, cu prunele așezate în cerc, pe un suport alb, lângă un prosop cu carouri roșii"
   },
   {
     "slug": "paine-turceasca-la-tigaie",
